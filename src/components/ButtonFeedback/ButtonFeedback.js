@@ -1,9 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const ButtonFeedback = ({ title, increment }) => {
+const ButtonFeedback = ({ increment }) => {
   return (
     <>
-      <h2>{title}</h2>
       <button type="button" name="good" onClick={increment}>
         good
       </button>
@@ -15,6 +15,10 @@ const ButtonFeedback = ({ title, increment }) => {
       </button>
     </>
   );
+};
+
+ButtonFeedback.propTypes = {
+  increment: PropTypes.func.isRequired,
 };
 
 export default ButtonFeedback;

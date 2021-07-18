@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Statistics = ({
   total,
@@ -16,6 +17,19 @@ const Statistics = ({
       </ul>
     </>
   );
+};
+
+Statistics.propTypes = {
+  total: PropTypes.number.isRequired,
+  goodPercentage: PropTypes.number.isRequired,
+  state: PropTypes.shape(
+    PropTypes.number.isRequired
+    // {
+    // good: PropTypes.number.isRequired,
+    // neutral: PropTypes.number.isRequired,
+    // bad: PropTypes.number.isRequired,
+    // }
+  ).isRequired,
 };
 
 export default Statistics;

@@ -45,11 +45,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Section title="Please leave feedback">
+        <Section title={"Please leave feedback"}>
           <ButtonFeedback increment={this.Increment} />
         </Section>
 
-        <Section title="Statistics">
+        <Section title={"Statistics"}>
           {this.countTotalFeedback() ? (
             <Statistics
               total={this.countTotalFeedback()}
