@@ -4,10 +4,3 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
-
-button {
-  margin-right: 10px;
-  border: 1px solid black;
-  border-radius: 4px;
-  background-color: transparent;
-}

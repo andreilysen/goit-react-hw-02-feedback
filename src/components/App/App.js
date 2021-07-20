@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import Section from "./components/Section";
-import ButtonFeedback from "./components/ButtonFeedback";
-import Statistics from "./components/Statistics";
-import Notification from "./components/Notification";
-
-import "./App.css";
+import Section from "../Section";
+import FeedbackOptions from "../ButtonFeedback";
+import Statistics from "../Statistics";
+import Notification from "../Notification";
 
 class App extends Component {
   state = {
@@ -46,7 +44,10 @@ class App extends Component {
     return (
       <div>
         <Section title={"Please leave feedback"}>
-          <ButtonFeedback increment={this.Increment} />
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.Increment}
+          />
         </Section>
 
         <Section title={"Statistics"}>
@@ -54,7 +55,9 @@ class App extends Component {
             <Statistics
               total={this.countTotalFeedback()}
               goodPercentage={this.countPositiveFeedbackPercentage()}
-              state={this.state}
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
             />
           ) : (
             <Notification message={"No feedback given"} />
